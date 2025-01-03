@@ -18,6 +18,7 @@ The system will navigate entering vehicles to the parking space closest to the s
 
 ## Setup
 Since the PN532 uses I2C communication, make sure I2C is enabled.
+
 <img src="https://github.com/sydneyliao/IoTParkingLot/blob/main/images/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202025-01-03%20141925.png" alt="raspberryPi setup" title="raspberryPi setup" width="300">
 <img src="https://github.com/sydneyliao/IoTParkingLot/blob/main/images/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202025-01-03%20142011.png" alt="interface" title="interface" width="300">
 
