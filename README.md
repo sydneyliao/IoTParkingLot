@@ -31,8 +31,58 @@ Since the Python version on the Raspberry Pi is 3.7 but this project requires Py
 [Instructions for installation](https://itheo.tech/install-python-38-on-a-raspberry-pi).
 
 Check version by entering:
-```bash
-python3.8 --version
+
+``python3.8 --version``
+
+![Circuit Diagram ](C:\Users\User\OneDrive\圖片\螢幕擷取畫面\螢幕擷取畫面 2025-01-03 152728.png)
+
+Success!
+#### 2.	Update the System and Install Required Tools
+Make sure your Raspberry Pi system is up to date and install the necessary tools for creating virtual environments.
+
+``
+sudo apt update
+sudo apt upgrade -y
+sudo apt install python3-venv -y``
+
+#### 3.	Create the Virtual Environment
+Navigate to your desired directory and create a virtual environment named my_env:
+
+``python3 -m venv my_env``
+
+Replace my_env with your preferred name for the virtual environment.This command creates a folder named my_env in the current directory, which contains all the necessary files for the virtual environment.
+#### 4.	Activate the Virtual Environment
+To start using the virtual environment, activate it with the following command:
+
+``source my_env/bin/activate``
+
+Once activated, your terminal prompt will show (my_env), indicating that you are now working inside the virtual environment.
+ 
+![Circuit Diagram 1](C:\Users\User\OneDrive\圖片\螢幕擷取畫面\螢幕擷取畫面 2025-01-03 144459.png)
+
+#### 5.	Deactivate the Virtual Environment
+When you're done working in the virtual environment, deactivate it using:
+``deactivate``
+
+This will return you to the global Python environment.
+### Install packages
+#### For PN532:
+``pip install adafruit-circuitpython-pn532``
+
+if there’s an error message, enter 
+
+``pip install adafruit-blinka adafruit-circuitpython-busdevice``
+
+#### For servo motor
+
+``pip install gpiozero``
+``pip install pigpio``(make sure to enter sudo pigpiod before running the code)
+#### For TCA9548A
+``pip install adafruit-circuitpython-tca9548a``
+
+if there’s an error message, enter
+
+``pip install adafruit-blinka adafruit-circuitpython-busdevice``
 
 
 
