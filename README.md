@@ -18,8 +18,8 @@ The system will navigate entering vehicles to the parking space closest to the s
 
 ## Setup
 Since the PN532 uses I2C communication, make sure I2C is enabled.
-![Circuit Diagram 1](C:\Users\User\OneDrive\圖片\螢幕擷取畫面\1735885506652.jpg)
-![Circuit Diagram 2](C:\Users\User\OneDrive\圖片\螢幕擷取畫面\1735885530442.jpg)
+<img src="C:\Users\User\OneDrive\圖片\螢幕擷取畫面\1735885506652.jpg" alt="Circuit Diagram" title="Circuit Diagram" width="500">
+<img src="C:\Users\User\OneDrive\圖片\螢幕擷取畫面\1735885530442.jpg" alt="Circuit Diagram" title="Circuit Diagram" width="500">
 
 Since the Python version on the Raspberry Pi is 3.7 but this project requires Python 3.8, to simplify operations, please first download Python 3.8 and then create a virtual environment to run the program within it. The instructions are as follows:
 
