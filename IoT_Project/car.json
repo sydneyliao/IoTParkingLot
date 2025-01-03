@@ -1,0 +1,70 @@
+{
+    "cars": [
+        {
+            "carId": 1,
+            "uId": "4aee484d"
+        },
+        {
+            "carId": 2,
+            "uId": "adc434d"
+        },
+        {
+            "carId": 3,
+            "uId": "ad4434d"
+        },
+        {
+            "carId": 4,
+            "uId": "dacc434d"
+        },
+        {
+            "carId": 5,
+            "uId": "dac4434d"
+        },
+        {
+            "carId": 6,
+            "uId": "7a8e404d"
+        },
+        {
+            "carId": 7,
+            "uId": "7a86404d"
+        },
+        {
+            "carId": 8,
+            "uId": "9a76404d"
+        },
+        {
+            "carId": 9,
+            "uId": "9a7a404d"
+        },
+        {
+            "carId": 10,
+            "uId": "7a7e404d"
+        }
+    ],
+    "parkingSpots": [
+        {
+            "parkId": 1,
+            "distance": 3,
+            "status": 0,
+            "carId": null
+        },
+        {
+            "parkId": 2,
+            "distance": 4,
+            "status": 0,
+            "carId": null
+        },
+        {
+            "parkId": 3,
+            "distance": 1,
+            "status": 0,
+            "carId": null
+        },
+        {
+            "parkId": 4,
+            "distance": 2,
+            "status": 0,
+            "carId": null
+        }
+    ]
+}
