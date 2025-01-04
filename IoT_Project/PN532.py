@@ -84,14 +84,14 @@ def test_single_channel(tca, channel):
 
 
 def verify_tca9548a_channel(tca, channel):
-    print(f"切换到通道 {channel}...")
+    print(f"切換到通道 {channel}...")
     try:
         i2c_channel = tca[channel]
         if i2c_channel.try_lock():
-            print(f"成功锁定通道 {channel}")
+            print(f"成功鎖定通道 {channel}")
             i2c_channel.unlock()
         else:
-            print(f"无法锁定通道 {channel}")
+            print(f"無法鎖定通道 {channel}")
     except Exception as e:
         print(f"通道 {channel} 错误: {e}")
 
