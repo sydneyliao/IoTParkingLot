@@ -4,7 +4,7 @@ def load_database(file_path="car.json"):
         with open(file_path, "r") as file:
             return json.load(file)
     except FileNotFoundError:
-        print("数据库文件未找到！")
+        print("資料庫文件未找到！")
         return {"cars": [], "parkingSpots": []}
 
 def save_database(database, file_path="car.json"):
