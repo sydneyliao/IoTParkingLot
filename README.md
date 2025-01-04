@@ -35,7 +35,7 @@ Check version by entering:
 
 ``python3.8 --version``
 
-![Circuit Diagram ](C:\Users\User\OneDrive\圖片\螢幕擷取畫面\螢幕擷取畫面 2025-01-03 152728.png)
+<img src="" alt="raspberryPi setup" title="raspberryPi setup" width="300">
 
 Success!
 #### 2.	Update the System and Install Required Tools
@@ -59,7 +59,7 @@ To start using the virtual environment, activate it with the following command:
 
 Once activated, your terminal prompt will show (my_env), indicating that you are now working inside the virtual environment.
  
-![Circuit Diagram 1](C:\Users\User\OneDrive\圖片\螢幕擷取畫面\螢幕擷取畫面 2025-01-03 144459.png)
+<img src="" alt="raspberryPi setup" title="raspberryPi setup" width="300">
 
 #### 5.	Deactivate the Virtual Environment
 When you're done working in the virtual environment, deactivate it using:
