@@ -77,6 +77,7 @@ if there’s an error message, enter
 #### For servo motor
 
 ``pip install gpiozero``
+
 ``pip install pigpio``(make sure to enter sudo pigpiod before running the code)
 #### For TCA9548A
 ``pip install adafruit-circuitpython-tca9548a``
