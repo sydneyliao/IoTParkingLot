@@ -59,7 +59,7 @@ To start using the virtual environment, activate it with the following command:
 
 Once activated, your terminal prompt will show (my_env), indicating that you are now working inside the virtual environment.
  
-<img src="" alt="raspberryPi setup" title="raspberryPi setup" width="300">
+<img src="images/螢幕擷取畫面 2025-01-03 144459.png" alt="raspberryPi setup" title="raspberryPi setup" width="300">
 
 #### 5.	Deactivate the Virtual Environment
 When you're done working in the virtual environment, deactivate it using:
