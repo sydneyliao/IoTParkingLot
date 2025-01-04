@@ -35,7 +35,7 @@ Check version by entering:
 
 ``python3.8 --version``
 
-<img src="" alt="raspberryPi setup" title="raspberryPi setup" width="300">
+<img src="images/螢幕擷取畫面 2025-01-03 152728.png" alt="raspberryPi setup" title="raspberryPi setup" width="300">
 
 Success!
 #### 2.	Update the System and Install Required Tools
