@@ -64,21 +64,21 @@ def test_pn532_on_channel(tca_mux, channel):
         
         
 def test_single_channel(tca, channel):
-    print(f"正在测试通道 {channel}...")
+    print(f"正在測試通道 {channel}...")
     try:
         i2c_channel = tca[channel]
         if i2c_channel.try_lock():
             devices = i2c_channel.scan()
-            print(f"通道 {channel} 上的设备地址: {[hex(addr) for addr in devices]}")
+            print(f"通道 {channel} 上的設備地址: {[hex(addr) for addr in devices]}")
             i2c_channel.unlock()
             if 0x24 in devices:
-                print(f"通道 {channel} 上检测到 PN532（地址 0x24）")
+                print(f"通道 {channel} 上檢測到 PN532（地址 0x24）")
             else:
-                print(f"通道 {channel} 未检测到 PN532（地址 0x24）")
+                print(f"通道 {channel} 未檢測到 PN532（地址 0x24）")
         else:
-            print(f"无法锁定通道 {channel}")
+            print(f"無法鎖定通道 {channel}")
     except Exception as e:
-        print(f"通道 {channel} 测试失败: {e}")
+        print(f"通道 {channel} 測試失敗: {e}")
 
 # 主程序
 
@@ -103,36 +103,9 @@ if __name__ == "__main__":
     test_single_channel(tca, 0)
     # 測試 PN532 功能（假設 PN532 在通道 0 和通道 1）
     for channel in [0,1,3,4]:
-        test_pn532_on_channel(tca, channel)
+        test_pn532_on_channel(tca, channel)'''
         
      
-from adafruit_pn532.i2c import PN532_I2C
-class PN532Handler:
-    def __init__(self, tca_mux, channel):
-        """
-        初始化 PN532Handler 並設置對應的 TCA9548A 通道。
-        :param tca_mux: TCA9548A 的多路復用器實例
-        :param channel: TCA9548A 的通道 (0~7)
-        """
-        self.i2c_channel = tca_mux[channel]
-        self.pn532 = PN532_I2C(self.i2c_channel)
-        self.pn532.SAM_configuration()  # 初始化 PN532
-
-    def detect_card(self, timeout=5.0):
-        """
-        偵測卡片並返回卡片 ID。
-        :param timeout: 偵測卡片的超時時間 (秒)
-        :return: 偵測到的卡片 ID 或 None
-        """
-        print("請將卡片放到 PN532 模組上...")
-        uid = self.pn532.read_passive_target(timeout=timeout)
-        if uid:
-            card_id = ''.join([hex(i)[2:] for i in uid])
-            print(f"偵測到卡片 ID: {card_id}")
-            return card_id
-        else:
-            print("未偵測到卡片")
-            return None'''
 
 from adafruit_pn532.i2c import PN532_I2C
 import threading
