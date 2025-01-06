@@ -86,7 +86,7 @@ if there’s an error message, enter
 
 ``pip install adafruit-blinka adafruit-circuitpython-busdevice``
 ### Program Code
-All codes are in the folder “IoT_Project”, you may download them and have a closer look. Some further details will bbe explain below:
+All codes are in the folder “IoT_Project”, you may download them and have a closer look. Some further details will be explained below:
 
 #### 1. PN532.py
 To check if the I2C devices are connected, enter i2cdetect -y 1. If the output matches the example shown in the image below, your TCA9548A has been successfully connected.
