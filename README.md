@@ -182,6 +182,8 @@ You should see something like this:
 
 #### 2.	Motor.py
 Depends on the angle you want your fence to go up and down, you may change the code. For more detail,visit [Control motor](https://docs.sunfounder.com/projects/umsk/en/latest/05_raspberry_pi/pi_lesson33_servo.html).
+#### 3. clear.py and viewDatabase.py
+These two files allow programmer to 
 
 
 
