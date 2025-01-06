@@ -188,7 +188,7 @@ def verify_tca9548a_channel(tca, channel):
         else:
             print(f"無法鎖定通道 {channel}")
     except Exception as e:
-        print(f"通道 {channel} 错误: {e}")
+        print(f"通道 {channel} 錯誤: {e}")
 
 # 主程式
 if __name__ == "__main__":
@@ -201,7 +201,7 @@ if __name__ == "__main__":
         test_pn532_on_channel(tca, channel)
 ```
 #### 2.	Motor.py
-Depends on the angle you want your fence to go up and down, you may change the code. For more detail,visit [Control motor]((https://docs.sunfounder.com/projects/umsk/en/latest/05_raspberry_pi/pi_lesson33_servo.html)).
+Depends on the angle you want your fence to go up and down, you may change the code. For more detail,visit [Control motor](https://docs.sunfounder.com/projects/umsk/en/latest/05_raspberry_pi/pi_lesson33_servo.html).
 
 
 
