@@ -119,26 +119,6 @@ def scan_i2c_devices(tca_mux):
                 print(f"通道 {channel} 上沒有找到設備")
         except Exception as e:
             print(f"通道 {channel} 錯誤: {e}")
-            
-
-# 測試 PN532 模組功能
-def test_pn532_on_channel(tca_mux, channel):
-    print(f"正在測試通道 {channel} 上的 PN532...")
-    try:
-        i2c_channel = tca_mux[channel]
-        time.sleep(0.2)
-        pn532 = PN532_I2C(i2c_channel)
-        pn532.SAM_configuration()  # 初始化 PN532
-
-        print("請將卡片放到 PN532 模組上...")
-        uid = pn532.read_passive_target(timeout=2.0)
-        if uid:
-            card_id = ''.join([hex(i)[2:] for i in uid])
-            print(f"通道 {channel} 偵測到卡片 ID: {card_id}")
-        else:
-            print(f"通道 {channel} 未偵測到卡片")
-    except Exception as e:
-        print(f"通道 {channel} 錯誤: {e}")
 
 def test_pn532_on_channel(tca_mux, channel):
     print(f"正在測試通道 {channel} 上的 PN532...")
@@ -175,9 +155,6 @@ def test_single_channel(tca, channel):
     except Exception as e:
         print(f"通道 {channel} 測試失敗: {e}")
 
-# 主程序
-
-
 def verify_tca9548a_channel(tca, channel):
     print(f"切換到通道 {channel}...")
     try:
@@ -196,10 +173,13 @@ if __name__ == "__main__":
     scan_i2c_devices(tca)  # 掃描所有通道上的 I2C 設備
     verify_tca9548a_channel(tca, 0)
     test_single_channel(tca, 0)
-    # 測試 PN532 功能（按通道決定）
+    # 測試 PN532 功能（視通道決定）
     for channel in [0,1,3,4]:
         test_pn532_on_channel(tca, channel)
 ```
+You should see something like this:
+
+
 #### 2.	Motor.py
 Depends on the angle you want your fence to go up and down, you may change the code. For more detail,visit [Control motor](https://docs.sunfounder.com/projects/umsk/en/latest/05_raspberry_pi/pi_lesson33_servo.html).
 
