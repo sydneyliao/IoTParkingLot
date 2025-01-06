@@ -1,6 +1,6 @@
 import json
 
-# 加载数据库
+# 加載資料庫
 def load_database(file_path="car.json"):
     try:
         with open(file_path, "r") as file:
@@ -9,7 +9,7 @@ def load_database(file_path="car.json"):
         print("can't find database！")
         return {"cars": [], "parkingSpots": []}
 
-# 查看数据库
+# 查看資料庫
 def view_database(file_path="car.json"):
     database = load_database(file_path)
     print("plate database：")
@@ -19,7 +19,7 @@ def view_database(file_path="car.json"):
     for spot in database["parkingSpots"]:
         print(f"park ID: {spot['parkId']}, distance: {spot['distance']}, status: {spot['status']}")
 
-# 主菜单
+
 def menu():
     while True:
         print("1. check")
