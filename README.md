@@ -1,5 +1,7 @@
 # IoT Smart Parking System
-NCU MIS IoT Project By Hsin Ni Liao
+**NCU MIS IoT Project**  
+*By Hsin Ni Liao*  
+*January 2025*
 ## Introduction
 The system will navigate entering vehicles to the parking space closest to the store entrance. The LED light blinks so the drivers can see the parking space in a short time and save time walking to the entrance.
 <img src="" alt="final" title="final" width="300">
