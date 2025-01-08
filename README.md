@@ -187,7 +187,7 @@ Run this code to see the smart parking system!
 #### 5. app.py and index.html
 Allow users to search their parking space number. You can freely enhance the web design to make the overall appearance more visually appealing. In Flask, the ``templates`` folder is a conventionally designated directory for storing HTML files that will be dynamically rendered by the application.
 
-If your ``index.html``is under other folder, enter``
+If your ``index.html`` is under other folder, enter ``app = Flask(__name__,template_folder='your_folder_name')``
 
 ## Video link
 
