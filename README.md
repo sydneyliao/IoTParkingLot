@@ -153,12 +153,12 @@ if __name__ == "__main__":
         check_channel_and_devices(tca, channel)
     
     # 測試特定通道上的 PN532
-    for channel in [0, 1, 3, 4]:
+    for channel in [0, 1, 3, 4, 5]:
         test_pn532_on_channel(tca, channel)
 ```
 You should see something like this:
 
-<img src="images/channel.png" alt="channel" title="channel" width="300">
+<img src="images/螢幕擷取畫面 2025-01-08 154346.png" alt="channel" title="channel" width="400">
 
 #### 2.	Motor.py
 Depends on the angle you want your fence to go up and down, you may change the code. For more detail,visit [Control motor](https://docs.sunfounder.com/projects/umsk/en/latest/05_raspberry_pi/pi_lesson33_servo.html).
