@@ -183,6 +183,7 @@ if __name__ == "__main__":
         test_pn532_on_channel(tca, channel)
 ```
 You should see something like this:
+
 <img src="images/channel.jpg" alt="final" title="final" width="300">
 
 #### 2.	Motor.py
