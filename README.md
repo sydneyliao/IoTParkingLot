@@ -2,6 +2,7 @@
 
 ## Introduction
 The system will navigate entering vehicles to the parking space closest to the store entrance. The LED light blinks so the drivers can see the parking space in a short time and save time walking to the entrance.
+<img src="images/.jpg" alt="circuit" title="circuit" width="300">
 
 ## Hardwares
 - **RaspberryPi 4**
