@@ -4,7 +4,7 @@
 *January 2025*
 ## Introduction
 The system will navigate entering vehicles to the parking space closest to the store entrance. The LED light blinks so the drivers can see the parking space in a short time and save time walking to the entrance.
-<img src="" alt="final" title="final" width="300">
+<img src="images/final.png" alt="final" title="final" width="300">
 <img src="images/IoT_circuit.png" alt="circuit" title="circuit" width="500">
 
 
