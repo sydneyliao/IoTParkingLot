@@ -1,6 +1,4 @@
 import json
-
-
 def load_database(file_path="car.json"):
     try:
         with open(file_path, "r") as file:
