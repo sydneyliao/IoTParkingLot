@@ -5,36 +5,39 @@
 ## Introduction
 The system will navigate entering vehicles to the parking space closest to the store entrance. The LED light blinks so the drivers can see the parking space in a short time and save time walking to the entrance.
 
-<img src="images/final.jpg" alt="final" title="final" width="300"><img src="images/IoT_circuit.png" alt="circuit" title="circuit" width="500">
-> References:
-> 1) https://github.com/adafruit/Fritzing-Library/blob/master/parts/Adafruit%20TCA9548A.fzpz
-> 2) https://github.com/SolderedElectronics/e-radionica.com-Fritzing-Library-parts-/blob/master/Tower%20Pro%20SG90%20servo.fzpz
-
-Details for PN532 connection:
-
-| PN532 Module | Connected TCA9548A Channel | PN532 SDA Connected to  | PN532 SCL Connected to  |
-|--------------|-----------------------------|--------------------------|--------------------------|
-| PN532 #1     | Channel 0                  | TCA9548A Channel 0 SDA0 | TCA9548A Channel 0 SCL0 |
-| PN532 #2     | Channel 1                  | TCA9548A Channel 1 SDA1 | TCA9548A Channel 1 SCL1 |
-| PN532 #3     | Channel 3                  | TCA9548A Channel 3 SDA3 | TCA9548A Channel 3 SCL3 |
-| PN532 #4     | Channel 4                  | TCA9548A Channel 4 SDA4 | TCA9548A Channel 4 SCL4 |
-| PN532 #5     | Channel 5                  | TCA9548A Channel 5 SDA5 | TCA9548A Channel 5 SCL5 |
-
-Remember to switch your PN532 to I2C mode
-
-<img src="images/PN532.jpg" alt="pn532" title="pn532" width="150">
+<img src="images/final.jpg" alt="final" title="final" width="400">
 
 ## Hardwares
 - **RaspberryPi 4**
 - **Breadboard**
 - **Lots of dupont lines** (male/male, male/female, male/male)
 - **TCA9548A**
-- **PN532** x5 (may modify to fit your needs)*
+- **PN532 x5** (may modify to fit your needs)
 - **RFID sticker** (13.56M 26MM ISO 14443A)
 - **SG90 servo motor**
-- **Green LED** x4 (depends on how many parking spots)*
+- **Green LED x4** (depends on how many parking spots)
 - **Popsicle sticks**
 - **Foamboard**
+## Circuit Diagram
+<img src="images/IoT_circuit.png" alt="circuit" title="circuit" width="500">
+
+> References:
+> 1) https://github.com/adafruit/Fritzing-Library/blob/master/parts/Adafruit%20TCA9548A.fzpz
+> 2) https://github.com/SolderedElectronics/e-radionica.com-Fritzing-Library-parts-/blob/master/Tower%20Pro%20SG90%20servo.fzpz
+
+Details for PN532 connection:
+
+| PN532 Module | Connected TCA9548A Channel | PN532 SDA Connected to TCA9548A  | PN532 SCL Connected to TCA9548A |
+|--------------|-----------------------------|--------------------------|--------------------------|
+| PN532 #1     | Channel 0                  | SDA0 | SCL0 |
+| PN532 #2     | Channel 1                  | SDA1 | SCL1 |
+| PN532 #3     | Channel 3                  | SDA3 | SCL3 |
+| PN532 #4     | Channel 4                  | SDA4 | SCL4 |
+| PN532 #5     | Channel 5                  | SDA5 | SCL5 |
+
+Remember to switch your PN532 to I2C mode
+
+<img src="images/PN532.jpg" alt="pn532" title="pn532" width="150">
 
 ## Setup
 Since the PN532 uses I2C communication, make sure I2C is enabled.
@@ -107,7 +110,7 @@ if there’s an error message, enter
 All codes are in the folder “IoT_Project”, you may download them and have a closer look. Some further details will be explained below:
 
 #### 1. PN532.py
-The code works, but sometimes the I2C devices are not very stable. You can use the following methods to check if the PN532 and TCA9548A are properly connected.
+The code works, but sometimes the I2C devices are not very stable. You may use the following methods to check if the PN532 and TCA9548A are properly connected.
 
 To check if the I2C devices are connected, enter ``i2cdetect -y 1``. If the output matches the example shown in the image below, your TCA9548A has been successfully connected.
 
