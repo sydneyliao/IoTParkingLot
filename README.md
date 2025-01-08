@@ -183,14 +183,14 @@ Depends on the angle you want your fence to go up and down, you may change the c
 #### 3. clear.py and viewDatabase.py
 These two files allow the programmer to revert changes of ``car.json``and check its current content.
 #### 4. main.py
-Run this code to see the smart parking system!
+Run this code to see the full functionality of the smart parking system!
 #### 5. app.py and index.html
 Allow users to search their parking space number. You can freely enhance the web design to make the overall appearance more visually appealing. In Flask, the ``templates`` folder is a conventionally designated directory for storing HTML files that will be dynamically rendered by the application.
 
 If your ``index.html`` is under other folder, enter ``app = Flask(__name__,template_folder='your_folder_name')``
 
 ## Video link
-[My video](https://www.canva.com/design/DAGbn_aqZYE/uqzChrbIB4glfiJ_fq3Lyw/watch?utm_content=DAGbn_aqZYE&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h29baeb429b).
+[My video](https://www.canva.com/design/DAGbn_aqZYE/uqzChrbIB4glfiJ_fq3Lyw/watch?utm_content=DAGbn_aqZYE&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h29baeb429b)
 
 
 
