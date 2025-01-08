@@ -35,7 +35,6 @@ Remember to switch your PN532 to I2C mode
 - **Green LED** x4 (depends on how many parking spots)*
 - **Popsicle sticks**
 - **Foamboard**
-- **Circuit Diagram**
 
 ## Setup
 Since the PN532 uses I2C communication, make sure I2C is enabled.
