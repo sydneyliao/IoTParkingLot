@@ -1,30 +1,6 @@
 from flask import Flask, request, render_template
 from parking_logic import load_database, get_parking_spot_for_car
 import json
-
-'''app = Flask(__name__,template_folder='Templates')
-
-@app.route('/')
-def home():
-    return render_template('index.html')
-
-@app.route('/query', methods=['POST'])
-def query_parking():
-    car_id = request.form.get('car_id')  # 獲取表單中的車輛 ID
-    database = load_database()          # 載入資料庫
-    car_info = next((car for car in database["parkingSpots"] if car["carId"] == car_id), None)
-
-    if not car_info:
-        return render_template('index.html', message="無法找到該車輛資訊，請確認輸入是否正確。")
-
-    parking_spot = get_parking_spot_for_car(database, car_id)
-    if parking_spot:
-        park_id = parking_spot.get('parkId')
-        #park_time = parking_spot.get('time')
-        return render_template('index.html', 
-                               message=f"車輛 ID: {car_id} 停在車位: {park_id}")
-    else:
-        return render_template('index.html', message="該車輛未停在任何車位。")'''
 app = Flask(__name__,template_folder='Templates')
 @app.route('/query', methods=['POST'])
 def query_parking():
