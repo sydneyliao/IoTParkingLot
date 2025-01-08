@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>停車資訊查詢系統</title>
+</head>
+<body>
+    <h1>停車資訊查詢系統</h1>
+    <form method="POST" action="/query">
+        <label for="car_id">輸入車輛 ID：</label>
+        <input type="text" id="car_id" name="car_id" required>
+        <button type="submit">查詢</button>
+    </form>
+    <br>
+    {% if message %}
+        <p>{{ message }}</p>
+    {% endif %}
+</body>
+</html>
