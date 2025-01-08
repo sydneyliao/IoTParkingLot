@@ -4,9 +4,21 @@
 *January 2025*
 ## Introduction
 The system will navigate entering vehicles to the parking space closest to the store entrance. The LED light blinks so the drivers can see the parking space in a short time and save time walking to the entrance.
-<img src="images/final.jpg" alt="final" title="final" width="300">
-<img src="images/IoT_circuit.png" alt="circuit" title="circuit" width="500">
 
+<img src="images/final.jpg" alt="final" title="final" width="300"><img src="images/IoT_circuit.png" alt="circuit" title="circuit" width="500">
+Details for PN532 connection:
+
+| PN532 Module | Connected TCA9548A Channel | PN532 SDA Connected to  | PN532 SCL Connected to  |
+|--------------|-----------------------------|--------------------------|--------------------------|
+| PN532 #1     | Channel 0                  | TCA9548A Channel 0 SDA0 | TCA9548A Channel 0 SCL0 |
+| PN532 #2     | Channel 1                  | TCA9548A Channel 1 SDA1 | TCA9548A Channel 1 SCL1 |
+| PN532 #3     | Channel 3                  | TCA9548A Channel 3 SDA3 | TCA9548A Channel 3 SCL3 |
+| PN532 #4     | Channel 4                  | TCA9548A Channel 4 SDA4 | TCA9548A Channel 4 SCL4 |
+| PN532 #5     | Channel 5                  | TCA9548A Channel 5 SDA5 | TCA9548A Channel 5 SCL5 |
+
+Remember to switch your PN532 to I2C mode
+
+<img src="images/PN532.jpg" alt="pn532" title="pn532" width="150">
 
 ## Hardwares
 - **RaspberryPi 4**
@@ -24,12 +36,10 @@ The system will navigate entering vehicles to the parking space closest to the s
 ## Setup
 Since the PN532 uses I2C communication, make sure I2C is enabled.
 
-<img src="images/1735885506652.jpg" alt="raspberryPi setup" title="raspberryPi setup" width="300">
-<img src="images/1735885530442.jpg" alt="interface" title="interface" width="300">
+<img src="images/1735885506652.jpg" alt="raspberryPi setup" title="raspberryPi setup" width="300" height="250"> <img src="images/1735885530442.jpg" alt="interface" title="interface" width="300" height="250">
 
 Since the Python version on the Raspberry Pi is 3.7 but this project requires Python 3.8, to simplify operations, please first download Python 3.8 and then create a virtual environment to run the program within it. The instructions are as follows:
 
----
 
 ### Steps
 
@@ -161,9 +171,13 @@ You should see something like this:
 <img src="images/螢幕擷取畫面 2025-01-08 154346.png" alt="channel" title="channel" width="400">
 
 #### 2.	Motor.py
-Depends on the angle you want your fence to go up and down, you may change the code. For more detail,visit [Control motor](https://docs.sunfounder.com/projects/umsk/en/latest/05_raspberry_pi/pi_lesson33_servo.html).
+Depends on the angle you want your fence to go up and down, you may change the code. For more detail, visit [Control motor](https://docs.sunfounder.com/projects/umsk/en/latest/05_raspberry_pi/pi_lesson33_servo.html).
 #### 3. clear.py and viewDatabase.py
-These two files allow the programmer to revert changes of ``car.json``and check its current content. 
+These two files allow the programmer to revert changes of ``car.json``and check its current content.
+#### 4. main.py
+Run this code to see the smart parking system!
+## Video link
+
 
 
 
