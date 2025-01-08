@@ -94,7 +94,9 @@ if there’s an error message, enter
 All codes are in the folder “IoT_Project”, you may download them and have a closer look. Some further details will be explained below:
 
 #### 1. PN532.py
-To check if the I2C devices are connected, enter i2cdetect -y 1. If the output matches the example shown in the image below, your TCA9548A has been successfully connected.
+The code works, but sometimes the I2C devices are not very stable. You can use the following methods to check if the PN532 and TCA9548A are properly connected.
+
+To check if the I2C devices are connected, enter ``i2cdetect -y 1``. If the output matches the example shown in the image below, your TCA9548A has been successfully connected.
 
 To verify each PN532 on its respective channel, you can use the code below. It's recommended to check each channel individually, as this makes it easier to identify any issues that may arise.
 ```
@@ -184,12 +186,12 @@ if __name__ == "__main__":
 ```
 You should see something like this:
 
-<img src="images/channel.jpg" alt="final" title="final" width="300">
+<img src="images/channel.png" alt="final" title="final" width="300">
 
 #### 2.	Motor.py
 Depends on the angle you want your fence to go up and down, you may change the code. For more detail,visit [Control motor](https://docs.sunfounder.com/projects/umsk/en/latest/05_raspberry_pi/pi_lesson33_servo.html).
 #### 3. clear.py and viewDatabase.py
-These two files allow programmer to 
+These two files allow programmer to clear changes of ``car.json``and check the current data. 
 
 
 
