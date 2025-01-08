@@ -6,6 +6,10 @@
 The system will navigate entering vehicles to the parking space closest to the store entrance. The LED light blinks so the drivers can see the parking space in a short time and save time walking to the entrance.
 
 <img src="images/final.jpg" alt="final" title="final" width="300"><img src="images/IoT_circuit.png" alt="circuit" title="circuit" width="500">
+> References:
+> 1) https://github.com/adafruit/Fritzing-Library/blob/master/parts/Adafruit%20TCA9548A.fzpz
+> 2) https://github.com/SolderedElectronics/e-radionica.com-Fritzing-Library-parts-/blob/master/Tower%20Pro%20SG90%20servo.fzpz
+
 Details for PN532 connection:
 
 | PN532 Module | Connected TCA9548A Channel | PN532 SDA Connected to  | PN532 SCL Connected to  |
@@ -177,6 +181,7 @@ These two files allow the programmer to revert changes of ``car.json``and check 
 #### 4. main.py
 Run this code to see the smart parking system!
 ## Video link
+
 
 
 
