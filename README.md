@@ -98,6 +98,8 @@ The code works, but sometimes the I2C devices are not very stable. You can use t
 
 To check if the I2C devices are connected, enter ``i2cdetect -y 1``. If the output matches the example shown in the image below, your TCA9548A has been successfully connected.
 
+<img src="images/螢幕擷取畫面 2025-01-08 152426.png" alt="TCA9548Achannel" title="TCA9548Achannel" width="300">
+
 To verify each PN532 on its respective channel, you can use the code below. It's recommended to check each channel individually, as this makes it easier to identify any issues that may arise.
 ```
 import board
