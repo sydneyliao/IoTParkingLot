@@ -3,7 +3,7 @@
 *By Hsin Ni Liao*  
 *January 2025*
 ## Introduction
-The system will navigate entering vehicles to the parking space closest to the store entrance. The LED light blinks so the drivers can see the parking space in a short time and save time walking to the entrance.
+The system will navigate entering vehicles to the parking space closest to the store entrance. The LED light blinks so the drivers can see the parking space in a short time and save time walking to the entrance. Also, users can search their parking space number through a website.
 
 <img src="images/final.jpg" alt="final" title="final" width="400">
 
@@ -106,6 +106,8 @@ if there’s an error message, enter
 if there’s an error message, enter
 
 ``pip install adafruit-blinka adafruit-circuitpython-busdevice``
+- #### For flask
+``pip install flask``
 ### Program Code
 All codes are in the folder “IoT_Project”, you may download them and have a closer look. Some further details will be explained below:
 
@@ -182,6 +184,9 @@ Depends on the angle you want your fence to go up and down, you may change the c
 These two files allow the programmer to revert changes of ``car.json``and check its current content.
 #### 4. main.py
 Run this code to see the smart parking system!
+#### 5. app.py and index.html
+Allow users to search their parking space number. You can freely enhance the web design to make the overall appearance more visually appealing. In Flask, the ``templates`` folder is a conventionally designated directory for storing HTML files that will be dynamically rendered by the application.
+
 ## Video link
 
 
