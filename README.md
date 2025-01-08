@@ -72,19 +72,19 @@ When you're done working in the virtual environment, deactivate it using:
 
 This will return you to the global Python environment.
 ### Install packages
-#### For PN532:
+- #### For PN532:
 ``pip install adafruit-circuitpython-pn532``
 
 if there’s an error message, enter 
 
 ``pip install adafruit-blinka adafruit-circuitpython-busdevice``
 
-#### For servo motor
+- #### For servo motor
 
 ``pip install gpiozero``
 
-``pip install pigpio``(make sure to enter sudo pigpiod before running the code)
-#### For TCA9548A
+``pip install pigpio``(make sure to enter ``sudo pigpiod`` before running the code)
+- #### For TCA9548A
 ``pip install adafruit-circuitpython-tca9548a``
 
 if there’s an error message, enter
@@ -112,88 +112,58 @@ import time
 i2c = busio.I2C(board.SCL, board.SDA)
 tca = TCA9548A(i2c)
 
-# 測試每個通道上的 I2C 設備
-def scan_i2c_devices(tca_mux):
-    for channel in range(8):  # TCA9548A 有 8 個通道 (CH0 ~ CH7)
-        print(f"changing to 通道{channel}...")
-        try:
-            i2c_channel = tca_mux[channel]  # 選擇 TCA9548A 的通道
-            i2c_channel.try_lock()
-            devices = i2c_channel.scan()  # 掃描 I2C 設備地址
+# 檢查通道和設備
+def check_channel_and_devices(tca_mux, channel):
+    print(f"Checking channel {channel}...")
+    try:
+        i2c_channel = tca_mux[channel]
+        if i2c_channel.try_lock():
+            devices = i2c_channel.scan()
             i2c_channel.unlock()
-            
-            if devices:
-                print(f"通道 {channel} 上找到的設備地址: {[hex(address) for address in devices]}")
-            else:
-                print(f"通道 {channel} 上沒有找到設備")
-        except Exception as e:
-            print(f"通道 {channel} 錯誤: {e}")
+            print(f"Devices on channel {channel}: {[hex(addr) for addr in devices]}")
+            return devices
+        else:
+            print(f"Unable to lock channel {channel}")
+    except Exception as e:
+        print(f"Error on channel {channel}: {e}")
+    return []
 
+# 測試 PN532 功能
 def test_pn532_on_channel(tca_mux, channel):
-    print(f"正在測試通道 {channel} 上的 PN532...")
+    print(f"Testing PN532 on channel {channel}...")
     try:
         i2c_channel = tca_mux[channel]
         pn532 = PN532_I2C(i2c_channel)
         pn532.SAM_configuration()  # 初始化 PN532
 
-        print("請將卡片放到 PN532 模組上...")
+        print("Place a card on the PN532 module...")
         uid = pn532.read_passive_target(timeout=5.0)
         if uid:
             card_id = ''.join([hex(i)[2:] for i in uid])
-            print(f"通道 {channel} 偵測到卡片 ID: {card_id}")
+            print(f"Card detected on channel {channel}, ID: {card_id}")
         else:
-            print(f"通道 {channel} 未偵測到卡片")
+            print(f"No card detected on channel {channel}")
     except Exception as e:
-        print(f"通道 {channel} 錯誤: {e}")
-        
-        
-def test_single_channel(tca, channel):
-    print(f"正在測試通道 {channel}...")
-    try:
-        i2c_channel = tca[channel]
-        if i2c_channel.try_lock():
-            devices = i2c_channel.scan()
-            print(f"通道 {channel} 上的設備地址: {[hex(addr) for addr in devices]}")
-            i2c_channel.unlock()
-            if 0x24 in devices:
-                print(f"通道 {channel} 上檢測到 PN532（地址 0x24）")
-            else:
-                print(f"通道 {channel} 未檢測到 PN532（地址 0x24）")
-        else:
-            print(f"無法鎖定通道 {channel}")
-    except Exception as e:
-        print(f"通道 {channel} 測試失敗: {e}")
-
-def verify_tca9548a_channel(tca, channel):
-    print(f"切換到通道 {channel}...")
-    try:
-        i2c_channel = tca[channel]
-        if i2c_channel.try_lock():
-            print(f"成功鎖定通道 {channel}")
-            i2c_channel.unlock()
-        else:
-            print(f"無法鎖定通道 {channel}")
-    except Exception as e:
-        print(f"通道 {channel} 錯誤: {e}")
+        print(f"Error on channel {channel}: {e}")
 
 # 主程式
 if __name__ == "__main__":
-    print("開始測試 TCA9548A I2C 多路復用器")
-    scan_i2c_devices(tca)  # 掃描所有通道上的 I2C 設備
-    verify_tca9548a_channel(tca, 0)
-    test_single_channel(tca, 0)
-    # 測試 PN532 功能（視通道決定）
-    for channel in [0,1,3,4]:
+    print("Starting TCA9548A I2C multiplexer test")
+    for channel in range(8):
+        check_channel_and_devices(tca, channel)
+    
+    # 測試特定通道上的 PN532
+    for channel in [0, 1, 3, 4]:
         test_pn532_on_channel(tca, channel)
 ```
 You should see something like this:
 
-<img src="images/channel.png" alt="final" title="final" width="300">
+<img src="images/channel.png" alt="channel" title="channel" width="300">
 
 #### 2.	Motor.py
 Depends on the angle you want your fence to go up and down, you may change the code. For more detail,visit [Control motor](https://docs.sunfounder.com/projects/umsk/en/latest/05_raspberry_pi/pi_lesson33_servo.html).
 #### 3. clear.py and viewDatabase.py
-These two files allow programmer to clear changes of ``car.json``and check the current data. 
+These two files allow the programmer to revert changes of ``car.json``and check its current content. 
 
 
 
